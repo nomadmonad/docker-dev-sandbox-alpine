@@ -1,6 +1,6 @@
 FROM ruby:3.2.2-alpine3.18
 
-ENV ROOT="/rails_app"
+ENV ROOT="/app"
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 
@@ -28,7 +28,7 @@ RUN gem install bundler:2.0.2 && \
     bundle install
 RUN apk del build-packs
 
-COPY . ${ROOT}
+# COPY . ${ROOT}
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
@@ -62,8 +62,7 @@ RUN apk update && \
 
 RUN pwd
 
-COPY ./rails_app/Gemfile /rails_app/Gemfile
-COPY ./rails_app/Gemfile.lock /rails_app/Gemfile.lock
+COPY Gemfile Gemfile.lock /rails_app/Gemfile.lock
 
 RUN gem install bundler:2.4.1 && \
     bundle install
