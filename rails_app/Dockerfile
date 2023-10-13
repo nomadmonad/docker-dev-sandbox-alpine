@@ -62,8 +62,8 @@ RUN apk update && \
 
 RUN pwd
 
-COPY ./rails_app/Gemfile ${ROOT}
-COPY ./rails_app/Gemfile.lock ${ROOT}
+COPY ./rails_app/Gemfile /rails_app/Gemfile
+COPY ./rails_app/Gemfile.lock /rails_app/Gemfile.lock
 
 RUN gem install bundler:2.4.1 && \
     bundle install
