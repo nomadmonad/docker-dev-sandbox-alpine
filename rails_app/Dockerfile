@@ -9,6 +9,11 @@ WORKDIR ${ROOT}
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
+    linux-headers \
+    libxml2-dev \
+    make \
+    gcc \
+    libc-dev \
     bash \
     vim \
     git \
