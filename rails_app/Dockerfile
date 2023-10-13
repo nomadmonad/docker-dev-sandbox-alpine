@@ -11,6 +11,7 @@ RUN apk update && \
     apk add --no-cache \
     bash \
     vim \
+    git \
     nodejs \
     mysql-dev \
     tzdata \
