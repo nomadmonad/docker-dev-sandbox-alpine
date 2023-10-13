@@ -63,7 +63,7 @@ RUN apk update && \
 # COPY Gemfile ${ROOT}
 # COPY Gemfile.lock ${ROOT}
 
-RUN gem install bundler:2.0.2 && \
+RUN gem install bundler:2.4.1 && \
     bundle install
 RUN apk del build-packs
 
