@@ -60,14 +60,14 @@ RUN apk update && \
     curl-dev \
     mysql-client
 
-COPY Gemfile ${ROOT}
-COPY Gemfile.lock ${ROOT}
+# COPY Gemfile ${ROOT}
+# COPY Gemfile.lock ${ROOT}
 
 RUN gem install bundler:2.0.2 && \
     bundle install
 RUN apk del build-packs
 
-COPY . ${ROOT}
+# COPY . ${ROOT}
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
