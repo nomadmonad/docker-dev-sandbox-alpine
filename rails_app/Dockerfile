@@ -15,6 +15,7 @@ RUN apk update && \
     make \
     gcc \
     libc-dev \
+    ruby-dev \
     bash \
     vim \
     git \
