@@ -60,8 +60,10 @@ RUN apk update && \
     curl-dev \
     mysql-client
 
-# COPY Gemfile ${ROOT}
-# COPY Gemfile.lock ${ROOT}
+RUN pwd
+
+COPY ./Gemfile ${ROOT}
+COPY ./Gemfile.lock ${ROOT}
 
 RUN gem install bundler:2.4.1 && \
     bundle install
