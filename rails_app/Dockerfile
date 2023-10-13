@@ -9,6 +9,7 @@ WORKDIR ${ROOT}
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
+    gcompat \
     linux-headers \
     libxml2-dev \
     make \
